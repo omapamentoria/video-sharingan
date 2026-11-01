@@ -1,0 +1,269 @@
+{
+ "regra": "Um Reel por dia às 12h, na ordem desta lista, pulando os que não estão prontos (pronto=false) e os que já estão no calendário. Conteúdo de ENEM antes de 8/11 e 15/11.",
+ "reels": [
+  {
+   "id": "aprovados_padrao",
+   "titulo": "O padrão dos aprovados",
+   "legenda": "Aprovado é aprovado: o jeito muda pouco de um para o outro. 📋\n\nAnalisando as estratégias de vários aprovados, a gente encontra padrões. E eles têm mais a ver com rotina, método e com a forma de administrar o estudo do que com o tipo de preparação.\n\nQuem passa sabe o que precisa fazer para passar.\n\n👉 Quer estudar assim em 2027? As inscrições da Mentoria MAPA estão abertas no link da bio.\n\n#aprovados #enem #vestibular #método",
+   "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/aprovados_padrao.mp4",
+   "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/aprovados_padrao.jpg",
+   "pronto": true
+  },
+  {
+   "id": "priorizar_2025",
+   "titulo": "No ENEM passa quem sabe priorizar",
+   "legenda": "Esquece o cronograma do cursinho: o seu programa tem que ser seu. 🎯\n\nNo ENEM não passa quem acerta todas, passa quem sabe priorizar.\nE quanto mais você detalha como está errando, mais fácil fica resolver o erro.\n\nVocê não precisa ter feito tudo desde o início do ano. Se começar agora, ainda dá para evoluir muito.\n\n📍 As inscrições da Mentoria MAPA 2027 estão abertas.\n👉 Link na bio.\n\n#enem #priorizar #estudos #vestibular",
+   "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/priorizar_2025.mp4",
+   "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/priorizar_2025.jpg",
+   "pronto": true
+  },
+  {
+   "id": "enem_1_minuto_porcentagem",
+   "titulo": "10% menos 2% não é 8%",
+   "legenda": "10% a mais e 2% a menos é 8%? ❌\n\nENEM 2024, questão 140: a cliente calculou 8% direto e errou.\nUma porcentagem foi aplicada em cima do valor já atualizado: R$ 1.000 + 10% = R$ 1.100; menos 2% = R$ 1.078.\n\nSempre que tiver mais de uma porcentagem na questão, confira em cima de qual valor cada uma foi aplicada. 📐\n\n📍 As inscrições da Mentoria MAPA 2027 estão abertas.\n👉 Link na bio.\n\n#enem #matemática #porcentagem #retafinal",
+   "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/enem_1_minuto_porcentagem.mp4",
+   "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/enem_1_minuto_porcentagem.jpg",
+   "pronto": false
+  },
+  {
+   "id": "enem_1_minuto_farmacia",
+   "titulo": "Questão do ENEM em 1 minuto: a pegadinha da farmácia",
+   "legenda": "Questão do ENEM em 1 minuto ⏱️\nENEM 2021, questão 143: a pegadinha da farmácia 💊\n\nParece que comprar tudo na farmácia 3 é o mais barato, por causa do desconto grande.\nSó que a questão deixa comprar em farmácias diferentes, e é aí que ela te pega. Resposta: letra C.\n\nQuer mais dicas assim para a reta final?\n\n👉 Quer estudar assim em 2027? As inscrições da Mentoria MAPA estão abertas no link da bio.\n\n#enem #matemática #questõesenem #retafinal",
+   "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/enem_1_minuto_farmacia.mp4",
+   "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/enem_1_minuto_farmacia.jpg",
+   "pronto": false
+  },
+  {
+   "id": "vespera_enem",
+   "titulo": "Véspera: estude a SUA prova",
+   "legenda": "Não faz sentido estudar como se você ainda tivesse meses pela frente. ⏳\n\nAgora é hora de estudar a SUA prova: o que mais cai, o que você ainda erra e o que vale a pena revisar.\nÉ como o maratonista antes da largada: ele alonga e aquece o corpo antes de correr. 🏃\n\n✅ Inscrições abertas para a Mentoria MAPA 2027.\n👉 Faça sua inscrição pelo link da bio.\n\n#enem #ssa3 #retafinal #vésperadeprova",
+   "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/vespera_enem.mp4",
+   "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/vespera_enem.jpg",
+   "pronto": false
+  },
+  {
+   "id": "pegadinhas_vespera",
+   "titulo": "Pegadinhas da véspera",
+   "legenda": "As pegadinhas de Biologia que mais derrubam na prova ⚠️\n\n🔸 Taxa de glicose \"alta\" ou concentrada? Cuidado com o falso alto.\n🔸 FSH e LH são da hipófise; estrógeno e progesterona, do ovário.\n🔸 Terminou em \"-ase\"? Em Biologia, é enzima.\n🔸 Penetrância x pleiotropia: saiba cada conceito.\n🔸 Sistema imunológico cai todo ano: revise vacina, imunidade ativa e passiva.\n\nSe 2027 é o seu ano, começa pelo caminho certo.\n📍 Inscrições da Mentoria MAPA 2027 abertas: link na bio.\n\n#biologia #enem #ssa3 #retafinal",
+   "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/pegadinhas_vespera.mp4",
+   "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/pegadinhas_vespera.jpg",
+   "pronto": false
+  },
+  {
+   "id": "tri_errar_facil",
+   "titulo": "TRI: acertar difícil e errar fácil",
+   "legenda": "Acertar uma questão difícil faz você perder ponto? Não é isso. 🎯\n\nComo a TRI do ENEM funciona:\n✅ Fáceis + médias garantidas + uma difícil = nota valorizada\n⚠️ Errou fáceis e médias e acertou a difícil? Você não perde ponto, mas deixa de ganhar: a TRI entende que pode ter sido chute.\n\nPor isso, garanta as questões mais tranquilas (como as de ecologia) antes de tudo.\n\n📍 Mentoria MAPA 2027 com inscrições abertas.\n👉 Link na bio. Quem sabe onde quer chegar, segue o MAPA.\n\n#tri #enem #ssa3 #estratégia #retafinal",
+   "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/tri_errar_facil.mp4",
+   "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/tri_errar_facil.jpg",
+   "pronto": false
+  },
+  {
+   "id": "live_depoimentos",
+   "titulo": "Depoimentos: Giovanna e Manu",
+   "legenda": "Desorganizada, sem norte, achando que não era capaz. 💭\nFoi assim que a Giovanna e a Manu chegaram no MAPA. Hoje, a Giovanna foi aprovada em Medicina na FPS e a Manu passou em Direito na Federal.\n\nA diferença? Mentores que organizaram a rotina e ajustaram a rota junto com elas.\n\n📍 As inscrições da Mentoria MAPA 2027 estão abertas.\n👉 Link na bio.\n\n#vestibular #enem #ssa3 #medicina #mentoria",
+   "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/live_depoimentos.mp4",
+   "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/live_depoimentos.jpg",
+   "pronto": true
+  },
+  {
+   "id": "enem_1_minuto_escala",
+   "titulo": "Questão do ENEM em 1 minuto: metro com centímetro",
+   "legenda": "Parece fácil. E é aí que você erra. 📏\n\nENEM 2021, questão 163: a réplica do castelo tem 160 cm, o original tem 38,4 m.\nSe você divide direto, misturou metro com centímetro.\n38,4 m = 3.840 cm → 160/3.840 = 1:24. Letra C. ✅\n\nFica sempre de olho nas unidades: litro, segundo, minuto, quilo, grama…\n\n✅ Inscrições abertas para a Mentoria MAPA 2027.\n👉 Faça sua inscrição pelo link da bio.\n\n#enem #matemática #escala #retafinal",
+   "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/enem_1_minuto_escala.mp4",
+   "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/enem_1_minuto_escala.jpg",
+   "pronto": false
+  },
+  {
+   "id": "enem_1_minuto_pitstop",
+   "titulo": "Questão do ENEM em 1 minuto: o pit stop",
+   "legenda": "Mais gente trabalhando, menos tempo. Menos gente, mais tempo. 🏎️\n\nPit stop: 3 pessoas por pneu trocam tudo em 4 segundos. Uma pessoa passa mal e o grupo fica com 2.\n4/x = 3/2? Errado! ❌ É inversamente proporcional: inverte a fração.\n2x = 12 → x = 6 segundos. Letra A. ✅\n\nUse o bom senso antes de montar a conta.\n\n📍 Mentoria MAPA 2027 com inscrições abertas.\n👉 Link na bio. Quem sabe onde quer chegar, segue o MAPA.\n\n#enem #matemática #regradetrês #retafinal",
+   "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/enem_1_minuto_pitstop.mp4",
+   "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/enem_1_minuto_pitstop.jpg",
+   "pronto": false
+  },
+  {
+   "id": "enem_1_minuto_teto_chao",
+   "titulo": "Direto no teto, inverso no chão",
+   "legenda": "“Odeio matemática, odeio física… pulei!” 🙈\nErrado: essa questão do ENEM 2024 não é difícil.\n\nO fluxo é diretamente proporcional à vazão (mL/s) e inversamente proporcional à área (cm²).\nRegra para nunca mais esquecer:\n⬆️ Direto no teto\n⬇️ Inverso no chão\nResultado: mL / (cm² · s). Letra C. ✅\n\n👉 Quer estudar assim em 2027? As inscrições da Mentoria MAPA estão abertas no link da bio.\n\n#enem #matemática #física #retafinal",
+   "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/enem_1_minuto_teto_chao.mp4",
+   "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/enem_1_minuto_teto_chao.jpg",
+   "pronto": false
+  },
+  {
+   "id": "fisica_hora_segundo",
+   "titulo": "Se fizer com 3600, vai dar errado",
+   "legenda": "A vazão veio em litros por HORA. A potência é em joules por SEGUNDO. ⏱️\nSe fizer a conta com 3.600 direto, vai dar errado.\n\nPotência hídrica = densidade × vazão × gravidade × altura\n1 hora = 3.600 segundos → o 3.600 corta com o 3.600\nP = 30 × 10 = 300 W = 3 × 10² W. Letra C. ✅\n\nNa reta final, olho nas unidades!\n\n🗺️ Mentoria MAPA 2027: inscrições abertas.\n👉 Clica no link da bio e começa pelo caminho certo.\n\n#física #enem #ssa3 #unidades #retafinal",
+   "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/fisica_hora_segundo.mp4",
+   "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/fisica_hora_segundo.jpg",
+   "pronto": false
+  },
+  {
+   "id": "fisica_lampada_queimou",
+   "titulo": "Queimou uma lâmpada: as outras brilham mais?",
+   "legenda": "Uma lâmpada queimou. As outras vão brilhar mais? 💡\nMuita gente acha que sim. Cuidado!\n\nCom a lâmpada, o conjunto tinha 2,4 Ω. Sem ela, sobra só o resistor: 4 Ω.\nResistência aumenta ⬆️ → corrente diminui ⬇️ → brilho diminui ⬇️\nGabarito: letra C. ✅\n\nFísica na reta final é entender, não decorar.\n\n📍 As inscrições da Mentoria MAPA 2027 estão abertas.\n👉 Link na bio.\n\n#física #enem #ssa3 #circuitos #retafinal",
+   "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/fisica_lampada_queimou.mp4",
+   "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/fisica_lampada_queimou.jpg",
+   "pronto": false
+  },
+  {
+   "id": "quem_somos",
+   "titulo": "Quem é o MAPA",
+   "legenda": "Como confiar em quem você nem conhece? 👋\n\nNós somos Luiz Fernando Azevedo e Mateus Calixto, estudantes de Medicina na UFPE. Antes da aprovação, fomos alunos cheios de dúvidas.\n\nO MAPA não nasceu num escritório. Nasceu da vivência real, de quem entendeu que esforço sem direção cansa, mas não aprova.\n\n🗺️ Mentoria MAPA 2027: inscrições abertas.\n👉 Clica no link da bio e começa pelo caminho certo.\n\n#medicina #ufpe #vestibular #mentoria",
+   "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/quem_somos.mp4",
+   "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/quem_somos.jpg",
+   "pronto": false
+  },
+  {
+   "id": "redacao_200_c5",
+   "titulo": "200 na C5: a proposta de intervenção",
+   "legenda": "200 na Competência 5? Dá para garantir. ✍️\n\nSua proposta de intervenção precisa responder, nessa ordem:\n1️⃣ Quem? (o agente)\n2️⃣ O quê? (a ação)\n3️⃣ Como? (o meio)\n4️⃣ Para quê? (a finalidade)\n5️⃣ Detalhamento\n\nDica do Intensivão MAPA: escreva as palavras (agente, ação, meio, finalidade) para o corretor não dizer que você não usou. E capriche no detalhamento: é nele que mais se perde ponto.\n\n📍 As inscrições da Mentoria MAPA 2027 estão abertas.\n👉 Link na bio.\n\n#redação #enem #competência5 #redaçãoenem",
+   "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/redacao_200_c5.mp4",
+   "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/redacao_200_c5.jpg",
+   "pronto": false
+  },
+  {
+   "id": "redacao_aprovados",
+   "titulo": "Redação: o que os aprovados fazem",
+   "legenda": "Dicas de redação direto da aula do Intensivão MAPA ✍️\n\n▪️ Introdução não pode ser muito grande\n▪️ Se não dá para explicar o repertório em uma frase, não use\n▪️ A tese guia todo o texto\n▪️ Não repita conectivos\n▪️ Use pontos finais\n\nE em 2027 tem correção semanal de redação na Mentoria MAPA.\n\n🗺️ Mentoria MAPA 2027: inscrições abertas.\n👉 Clica no link da bio e começa pelo caminho certo.\n\n#redação #enem #redaçãoenem #vestibular",
+   "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/redacao_aprovados.mp4",
+   "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/redacao_aprovados.jpg",
+   "pronto": false
+  },
+  {
+   "id": "bio_remedio_celulose",
+   "titulo": "Por que o remédio tem revestimento de celulose?",
+   "legenda": "Por que alguns remédios vêm com revestimento de celulose? 💊\n\nA gente não tem enzima para digerir celulose.\nEntão o revestimento protege o medicamento do pH baixo do estômago (HCl) e só libera o fármaco perto da neutralidade.\nResposta: garante que o fármaco não seja afetado pela secreção gástrica. Letra C. ✅\n\nBiologia que cai: entende o porquê e acerta.\n\n👉 Quer estudar assim em 2027? As inscrições da Mentoria MAPA estão abertas no link da bio.\n\n#biologia #enem #ssa3 #digestão #retafinal",
+   "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/bio_remedio_celulose.mp4",
+   "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/bio_remedio_celulose.jpg",
+   "pronto": false
+  },
+  {
+   "id": "bio_pegadinha_coco",
+   "titulo": "A pegadinha do coco",
+   "legenda": "O coco tem parênquima aerífero ou aquífero? 🥥\n\nMuita gente vai direto no aquífero, porque o coco está na água.\nSó que ele precisa BOIAR. Estar na água não significa ter parênquima aquífero.\nResposta: aerífero. ✅\n\nEssa já caiu, e a pegadinha continua derrubando gente.\n\n🗺️ Mentoria MAPA 2027: inscrições abertas.\n👉 Clica no link da bio e começa pelo caminho certo.\n\n#biologia #botânica #enem #ssa3 #pegadinha",
+   "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/bio_pegadinha_coco.mp4",
+   "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/bio_pegadinha_coco.jpg",
+   "pronto": false
+  },
+  {
+   "id": "bio_respiracao_celular",
+   "titulo": "O ar que você respira: pra onde vai?",
+   "legenda": "O ar que você respira: pra onde ele vai? 🫁\nBioenergética, o terror de muita gente, resumida:\n\n📍 Glicólise → citoplasma\n📍 Ciclo de Krebs → matriz (é aqui que sai o CO₂ que você expira)\n📍 Cadeia respiratória → cristas mitocondriais (o O₂ só é usado aqui, na última etapa, e vira água)\n\nSalva para revisar antes da prova!\n\nSe 2027 é o seu ano, começa pelo caminho certo.\n📍 Inscrições da Mentoria MAPA 2027 abertas: link na bio.\n\n#biologia #bioquímica #enem #ssa3 #respiraçãocelular",
+   "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/bio_respiracao_celular.mp4",
+   "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/bio_respiracao_celular.jpg",
+   "pronto": false
+  },
+  {
+   "id": "fisica_nao_tire_a_raiz",
+   "titulo": "Nunca tire a raiz logo de cara",
+   "legenda": "Dica de ouro de Física: nunca calcule a raiz logo de cara. ✋√\n\nO ENEM é feito para os valores \"quebrados\" se encaixarem no final.\nDeixa o v₀² = 45 do jeito que está… o quadrado se encaixa sozinho:\n−45 = −20H → H = 45 ÷ 20 = 2,25 m. Letra B. ✅\n\nMenos conta, menos erro, mais tempo de prova.\n\nSe 2027 é o seu ano, começa pelo caminho certo.\n📍 Inscrições da Mentoria MAPA 2027 abertas: link na bio.\n\n#física #enem #cinemática #dicadeprova #retafinal",
+   "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/fisica_nao_tire_a_raiz.mp4",
+   "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/fisica_nao_tire_a_raiz.jpg",
+   "pronto": false
+  },
+  {
+   "id": "fisica_atrito_para_frente",
+   "titulo": "O atrito aponta para frente?",
+   "legenda": "Se o chão não tivesse atrito nenhum, você tentaria andar… e ficaria no mesmo lugar. 🚶\n\nÉ por isso que o atrito pode apontar PARA FRENTE.\n🔹 Estático: contra a tendência de deslizar (os operários não escorregam porque o atrito empurra para frente).\n🔹 Cinético: contra o movimento em si (a pedra sobe, o atrito nela aponta para trás).\n\nEntendeu a lógica, acertou a questão.\n\n✅ Inscrições abertas para a Mentoria MAPA 2027.\n👉 Faça sua inscrição pelo link da bio.\n\n#física #enem #dinâmica #atrito #retafinal",
+   "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/fisica_atrito_para_frente.mp4",
+   "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/fisica_atrito_para_frente.jpg",
+   "pronto": false
+  },
+  {
+   "id": "simulado_foto",
+   "titulo": "Simulado é tirar a foto",
+   "legenda": "Se você faz simulado só para ver o resultado, está fazendo do jeito errado. 📸\n\nFazer o simulado é tirar a foto.\nVocê cresce quando olha a foto e entende o que está errado nela: isso é a correção.\n\nE não existe \"vou queimar a prova\". Questão antiga e correção inteligente: esse é o potencial do simulado.\n\n📍 Mentoria MAPA 2027 com inscrições abertas.\n👉 Link na bio. Quem sabe onde quer chegar, segue o MAPA.\n\n#simulado #enem #vestibular #estudos",
+   "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/simulado_foto.mp4",
+   "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/simulado_foto.jpg",
+   "pronto": false
+  },
+  {
+   "id": "o_que_tem_2027",
+   "titulo": "O que tem na Mentoria 2027",
+   "legenda": "O que vem na Mentoria MAPA 2027? 👀\n\n✅ Plataforma inteligente e atualizada para acompanhar sua preparação\n✅ Intensivões próximos às principais provas\n✅ Os famosos simulados presenciais\n✅ E, principalmente, passar o ano sabendo exatamente qual é o próximo passo\n\nSe 2027 é o seu ano, começa pelo caminho certo.\n📍 Inscrições da Mentoria MAPA 2027 abertas: link na bio.\n\n#mentoria2027 #enem #vestibular #ssa",
+   "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/o_que_tem_2027.mp4",
+   "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/o_que_tem_2027.jpg",
+   "pronto": false
+  },
+  {
+   "id": "lancamento2027",
+   "titulo": "Lançamento Mentoria 2027",
+   "legenda": "Se 2027 precisa ser o ano da sua aprovação, sua preparação não pode ser igual à de todo mundo.\n\nAula, material e questão você encontra em qualquer lugar. O que falta para a maioria é um aprovado olhando para tudo isso e dizendo: \"isso aqui é o que você precisa fazer agora.\"\n\nNa Mentoria MAPA 2027 você vai ter dois mentores individuais e correção semanal de redação. ✍️\n\n📍 As inscrições da Mentoria MAPA 2027 estão abertas.\n👉 Link na bio.\n\n#mentoria #vestibular #enem #medicina #2027",
+   "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/lancamento2027.mp4",
+   "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/lancamento2027.jpg",
+   "pronto": false
+  },
+  {
+   "id": "plataforma_erros",
+   "titulo": "O que acontece com cada erro",
+   "legenda": "O que acontece com cada questão que os alunos do MAPA erram durante a semana? 🔍\n\nToda segunda-feira, os mentores se reúnem e analisam os erros.\nSe vários alunos erram a mesma coisa, o assunto vira aula para todo mundo.\nO que é individual continua individual.\n\nNão é montar um cronograma e torcer para funcionar. É executar, medir, identificar o erro e ajustar o caminho toda semana.\n\n🗺️ Mentoria MAPA 2027: inscrições abertas.\n👉 Clica no link da bio e começa pelo caminho certo.\n\n#enem #vestibular #estudos #mentoria",
+   "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/plataforma_erros.mp4",
+   "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/plataforma_erros.jpg",
+   "pronto": false
+  },
+  {
+   "id": "pais_cursinho",
+   "titulo": "Pais: “meu filho já faz cursinho”",
+   "legenda": "Pai, mãe: seu filho já faz cursinho. Mas quem diz o que ele precisa priorizar quando chega em casa? 🤔\n\nQuem analisa o porquê da nota do simulado?\nQuem muda a estratégia quando a nota não sobe?\n\nConteúdo sozinho não organiza uma preparação. No MAPA, seu filho tem mentores acompanhando o processo de perto.\n\nSe 2027 é o seu ano, começa pelo caminho certo.\n📍 Inscrições da Mentoria MAPA 2027 abertas: link na bio.\n\n#pais #vestibular #enem #educação",
+   "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/pais_cursinho.mp4",
+   "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/pais_cursinho.jpg",
+   "pronto": false
+  },
+  {
+   "id": "pais_emocional",
+   "titulo": "Para pais: o medo que ele não conta",
+   "legenda": "Talvez seu filho nunca tenha te contado o tamanho do medo que sente de não passar. 💙\n\nO vestibular não mexe só com o aluno. Mexe com a família inteira.\nE atrás de cada aprovação que o MAPA comemora existe uma família que comemorou cada etapa.\n\nSe você também quer que seu filho chegue mais preparado, conheça a Mentoria MAPA 2027.\n\n📍 Mentoria MAPA 2027 com inscrições abertas.\n👉 Link na bio. Quem sabe onde quer chegar, segue o MAPA.\n\n#pais #família #vestibular #enem",
+   "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/pais_emocional.mp4",
+   "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/pais_emocional.jpg",
+   "pronto": false
+  },
+  {
+   "id": "mapa_direcao",
+   "titulo": "O MAPA é / não é",
+   "legenda": "O MAPA é direção. Não é estudar tudo e torcer para cair na prova.\nO MAPA é método. Não é assistir aula de qualquer jeito.\nO MAPA é acompanhamento de verdade.\nO MAPA não é fórmula mágica nem promessa vazia. 🧭\n\nNo fim é simples: quem sabe onde quer chegar não estuda de qualquer jeito.\n\n✅ Inscrições abertas para a Mentoria MAPA 2027.\n👉 Faça sua inscrição pelo link da bio.\n\n#segueomapa #vestibular #enem",
+   "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/mapa_direcao.mp4",
+   "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/mapa_direcao.jpg",
+   "pronto": false
+  },
+  {
+   "id": "selfie_perguntas",
+   "titulo": "Você sabe o que fazer até a prova?",
+   "legenda": "Responde com sinceridade: 👇\nVocê sabe exatamente o que precisa fazer até a data da sua prova?\nQuais matérias priorizar? Onde mais erra? Como revisar?\n\nAbrir a lista de matérias e tentar dar conta de tudo é o problema mais comum de quem está se preparando.\n\nQuanto antes você organizar isso, mais tranquilo chega lá na frente.\n\n👉 Quer estudar assim em 2027? As inscrições da Mentoria MAPA estão abertas no link da bio.\n\n#vestibular #enem #organização #estudos",
+   "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/selfie_perguntas.mp4",
+   "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/selfie_perguntas.jpg",
+   "pronto": false
+  },
+  {
+   "id": "live_selfie",
+   "titulo": "Selfie: estudar mais ≠ estudar certo",
+   "legenda": "Estudar muito ≠ estudar o que a prova cobra. 📚\n\nSe eu estivesse me preparando hoje, teria 3 coisas que não deixaria para depois:\n1️⃣ Entender exatamente o que a prova cobra\n2️⃣ Descobrir onde estão meus principais erros\n3️⃣ Montar uma rotina que eu consigo cumprir\n\nÉ disso que a gente vai falar ao vivo.\n\nSe 2027 é o seu ano, começa pelo caminho certo.\n📍 Inscrições da Mentoria MAPA 2027 abertas: link na bio.\n\n#estudos #enem #vestibular #rotinadeestudos",
+   "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/live_selfie.mp4",
+   "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/live_selfie.jpg",
+   "pronto": false
+  },
+  {
+   "id": "live_2025",
+   "titulo": "Desde 2025: como o aprovado pensa",
+   "legenda": "Gravado em 2025, e continua valendo. 🎥\n\nNo ENEM não passa quem acerta todas. Passa quem sabe priorizar.\nE simulado não é sobre o resultado: é sobre entender o que você está errando.\n\nEssa é a proposta da Mentoria MAPA 2027.\n\n✅ Inscrições abertas para a Mentoria MAPA 2027.\n👉 Faça sua inscrição pelo link da bio.\n\n#enem #simulado #vestibular #medicina",
+   "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/live_2025.mp4",
+   "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/live_2025.jpg",
+   "pronto": false
+  },
+  {
+   "id": "live_balcao",
+   "titulo": "Balcão: qual caminho seguir",
+   "legenda": "Você não precisa confiar na gente agora. 🤝\nSó precisa decidir se quer continuar estudando no escuro ou seguir o MAPA.\n\nQuem sabe onde quer chegar precisa saber também qual caminho seguir.\n\n📍 Mentoria MAPA 2027 com inscrições abertas.\n👉 Link na bio. Quem sabe onde quer chegar, segue o MAPA.\n\n#vestibular #enem #ssa3 #2027",
+   "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/live_balcao.mp4",
+   "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/live_balcao.jpg",
+   "pronto": false
+  },
+  {
+   "id": "manoela_historia",
+   "titulo": "A história da Manu",
+   "legenda": "\"Eu achava que realmente era incapaz de passar em qualquer curso.\"\n\nA Manu passou em Direito na Federal. E a virada começou quando ela parou de estudar sozinha e sem direção. 💙\n\nQuer saber como o MAPA vai funcionar em 2027?\n\n🗺️ Mentoria MAPA 2027: inscrições abertas.\n👉 Clica no link da bio e começa pelo caminho certo.\n\n#aprovada #direito #vestibular #enem #mentoria",
+   "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/manoela_historia.mp4",
+   "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/manoela_historia.jpg",
+   "pronto": true
+  }
+ ]
+}

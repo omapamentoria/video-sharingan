@@ -9,6 +9,30 @@ Credenciais (só no ambiente, nunca em arquivo ou chat): `IG_ACCESS_TOKEN`, `IG_
 (token do "login do Instagram"; host padrão graph.instagram.com). Mídia pública: branch `instagram-midia`
 deste repositório, servida em `https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/<caminho>`.
 
+## Rodada de AGENDAMENTO (todo dia às 7h, e sempre que o dono pedir "agende mais")
+Objetivo: deixar no calendário os posts do dia (ou dos próximos N dias, quando pedido), seguindo o planejamento.
+1. `git pull`. Leia `plano_reels.json` (ordem oficial dos Reels) e os `posts` do calendário.
+2. **Reel das 12h**: se ainda não houver post `tipo: "reel"` para o dia, pegue o primeiro Reel do plano com
+   `pronto: true` que ainda não está no calendário e crie o documento `reel-AAAA-MM-DD`:
+   `tipo: "reel"`, `titulo`, `legenda` (a do plano), `midia: [video]`, `capa`, `quando: "AAAA-MM-DDT12:00:00-03:00"`,
+   `status: "agendado"`, `origem: "videos"`. Sem Reel pronto disponível: não crie nada e avise na resposta.
+3. **Carrossel das 19h**: confirme que existe `car-AAAA-MM-DD` agendado. Se faltar, avise (não invente conteúdo).
+4. **Notícia das 15h**: não crie aqui; ela nasce na rodada das 14h20. Só confirme que não há outro post às 15h.
+5. Pedido "agende os próximos N dias": repita 2–4 para cada dia, nunca dois Reels no mesmo dia.
+6. No fim, rode a REVISÃO dos posts do dia (ou do período agendado).
+
+## Rodada de REVISÃO (depois do agendamento das 7h, depois da notícia das 14h20 e sob demanda)
+1. Exporte para `revisao.json` os posts a revisar (com `id`), rode `python3 revisar.py revisao.json`.
+2. Para cada problema:
+   - com `legenda_corrigida`: aplique com `update` (ou `str_replace`) no documento.
+   - "hoje/amanhã", coerência de datas, fatos de notícia: leia o post e a data; corrija o texto só se estiver
+     errado na data em que vai sair (ex.: "amanhã" que já passou). Notícia: confira de novo na fonte.
+   - mídia fora do ar / tamanho errado / Reel inválido: marque `status: "erro"` com o motivo (não publique quebrado).
+   - horário fora do plano: ajuste `quando` para o horário do plano no mesmo dia.
+3. Revise também o sentido: legenda combina com o título e as imagens? Sem repetir o mesmo assunto de um post
+   recente? Tom do MAPA, sem promessas (nada de "garantido", números inventados). Edite o necessário.
+4. Resposta: lista curta do que foi revisado e do que mudou.
+
 ## Rodada de PUBLICAÇÃO (12h, 15h, 19h)
 1. Token: use `IG_ACCESS_TOKEN` do ambiente; se não existir, use o arquivo `~/.mapa/ig_token` (fora do repositório,
    permissão 600). Se o arquivo sumiu (container novo), recrie-o com o token que o dono passou nesta conversa.
@@ -39,6 +63,7 @@ deste repositório, servida em `https://raw.githubusercontent.com/omapamentoria/
    2–4 frases com os fatos, chamada para salvar/compartilhar, depois
    "📍 As inscrições da Mentoria MAPA 2027 estão abertas.\n👉 Link na bio.", "Fontes: ..." e 4–5 hashtags.
    Nunca mencionar live. Tom: próximo, direto, sem exagero.
+6. Rode a REVISÃO só da notícia criada.
 
 ## Regras
 - Nunca escrever o token em arquivo, commit, log ou mensagem.
