@@ -6,7 +6,8 @@ Checagens:
 - mídia: links públicos respondendo 200; carrossel com 2 a 10 imagens JPG 1080x1350/1080x1080; Reel em MP4 de 3 s a 15 min
 - legenda: até 2.200 caracteres, até 30 hashtags, CTA de inscrições + link na bio, nada de live/31 de outubro,
   "Black Friday" só até 30/11, sem datas passadas tratadas como futuras ("amanhã", "hoje") fora do dia do post
-- horário: ISO com -03:00 e dentro dos horários do plano (12h Reel, 15h notícia, 19h carrossel)"""
+- horário: ISO com -03:00 e dentro dos horários do plano (12h Reel, 15h notícia, 19h carrossel; nos dias de prova
+  o carrossel de "Boa prova" vai para 12h e o Reel para 19h)"""
 import io, json, re, subprocess, sys, urllib.request
 from datetime import datetime
 
@@ -50,12 +51,23 @@ def confere_legenda(p, prob):
         prob.append("usa 'hoje'/'amanhã': conferir se faz sentido na data do post")
     return nova if nova != L else None
 
+# Dias de prova: o carrossel de "Boa prova" sai às 12h (antes do portão do ENEM, que fecha às 13h, e antes do
+# SSA 2, que é à tarde) e o Reel vai para as 19h. Datas conferidas no edital do ENEM 2026 e no site da UPE (SSA 2027).
+DIAS_DE_PROVA = {"2026-11-08": "ENEM", "2026-11-15": "ENEM", "2026-12-06": "SSA", "2026-12-13": "SSA"}
+
+def horario_plano(p, dia):
+    if p.get("tipo") == "carrossel" and p.get("origem") == "noticias": return 15
+    prova = dia in DIAS_DE_PROVA
+    return {"reel": 19 if prova else 12, "carrossel": 12 if prova else 19}.get(p.get("tipo"))
+
 def confere_horario(p, prob):
     try: q = datetime.fromisoformat(p["quando"])
     except Exception: prob.append(f"data/hora inválida: {p.get('quando')}"); return
     if q.utcoffset() is None or q.utcoffset().total_seconds() != -3 * 3600: prob.append("horário sem fuso -03:00")
-    esp = {"reel": 12, "carrossel": 15 if p.get("origem") == "noticias" else 19}.get(p.get("tipo"))
-    if esp and q.hour != esp: prob.append(f"{p.get('tipo')} às {q:%H:%M} (plano: {esp}h)")
+    esp = horario_plano(p, q.date().isoformat())
+    if esp and q.hour != esp: prob.append(f"{p.get('tipo')} às {q:%H:%M} (plano: {esp}h{' — dia de prova' if q.date().isoformat() in DIAS_DE_PROVA else ''})")
+    if re.search(r"boa prova", p.get("legenda") or "", re.I) and re.search(r"\bhoje\b", p.get("legenda") or "", re.I) and q.hour >= 13:
+        prob.append(f"'Boa prova hoje' às {q:%H:%M}: a prova já começou ou acabou; publique às 12h")
 
 if __name__ == "__main__":
     out = []

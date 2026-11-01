@@ -19,7 +19,11 @@ Objetivo: deixar no calendário os posts do dia (ou dos próximos N dias, quando
 3. **Carrossel das 19h**: confirme que existe `car-AAAA-MM-DD` agendado. Se faltar, avise (não invente conteúdo).
 4. **Notícia das 15h**: não crie aqui; ela nasce na rodada das 14h20. Só confirme que não há outro post às 15h.
 5. Pedido "agende os próximos N dias": repita 2–4 para cada dia, nunca dois Reels no mesmo dia.
-6. No fim, rode a REVISÃO dos posts do dia (ou do período agendado).
+6. **Dias de prova** (8/11 e 15/11 ENEM; 6/12 e 13/12 SSA 1 e 2 — lista em `DIAS_DE_PROVA`, no `revisar.py`):
+   os horários se invertem. O carrossel de "Boa prova" sai às **12h** (antes do portão do ENEM fechar, às 13h, e antes
+   do SSA 2, à tarde) e o Reel vai para as **19h**. Ajuste `quando` do `car-` e do `reel-` desses dias.
+   Nunca publicar "Boa prova hoje" depois que a prova começou.
+7. No fim, rode a REVISÃO dos posts do dia (ou do período agendado).
 
 ## Rodada de REVISÃO (depois do agendamento das 7h, depois da notícia das 14h20 e sob demanda)
 1. Exporte para `revisao.json` os posts a revisar (com `id`), rode `python3 revisar.py revisao.json`.
