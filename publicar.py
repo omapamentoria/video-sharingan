@@ -1,13 +1,35 @@
 """Publica UM post do Calendário de Posts MAPA no Instagram pela API oficial (Instagram API com login do Instagram).
 Uso: python3 publicar.py post.json   -> imprime JSON {"ok": true, "media_id": ..., "permalink": ...} ou {"ok": false, "erro": ...}
 post.json: {"tipo": "reel"|"carrossel", "legenda": "...", "midia": [urls públicas], "video_local": "caminho opcional do .mp4"}
-Variáveis de ambiente: IG_ACCESS_TOKEN, IG_USER_ID (e opcional IG_API_HOST, padrão graph.instagram.com).
+Variável de ambiente: IG_ACCESS_TOKEN (opcionais: IG_USER_ID e IG_API_HOST; se faltarem, são descobertos pelo token).
 - Carrossel: cada imagem precisa de URL pública (JPG); até 10 imagens.
 - Reel: o vídeo é enviado direto para a Meta (upload resumível), então não precisa de URL pública."""
 import json, os, sys, time, urllib.request, urllib.parse, urllib.error
 
 TOKEN = os.environ.get("IG_ACCESS_TOKEN", ""); IG = os.environ.get("IG_USER_ID", "")
 HOST = "https://" + os.environ.get("IG_API_HOST", "graph.instagram.com") + "/v21.0"
+
+def descobre():
+    """Acha o host certo para o token (login do Instagram -> graph.instagram.com; usuário do sistema / login do
+    Facebook -> graph.facebook.com) e, se IG_USER_ID não estiver no ambiente, o ID da conta do Instagram."""
+    global HOST, IG
+    for h in ([HOST] if os.environ.get("IG_API_HOST") else ["https://graph.instagram.com/v21.0", "https://graph.facebook.com/v21.0"]):
+        try:
+            if "graph.instagram.com" in h:
+                me = json.loads(urllib.request.urlopen(f"{h}/me?fields=user_id,username&access_token={TOKEN}", timeout=60).read())
+                HOST = h; IG = IG or str(me.get("user_id") or me.get("id")); return
+            r = json.loads(urllib.request.urlopen(f"{h}/me/accounts?fields=instagram_business_account&access_token={TOKEN}", timeout=60).read())
+            ids = [p["instagram_business_account"]["id"] for p in r.get("data", []) if p.get("instagram_business_account")]
+            if not ids:  # usuário do sistema: contas do Instagram atribuídas direto ao portfólio
+                me = json.loads(urllib.request.urlopen(f"{h}/me?fields=id&access_token={TOKEN}", timeout=60).read())
+                for ed in ("instagram_accounts", "owned_instagram_accounts"):
+                    try:
+                        r = json.loads(urllib.request.urlopen(f"{h}/me/{ed}?fields=id,username&access_token={TOKEN}", timeout=60).read())
+                        ids = [a["id"] for a in r.get("data", [])]
+                        if ids: break
+                    except urllib.error.HTTPError: pass
+            HOST = h; IG = IG or (ids[0] if ids else ""); return
+        except urllib.error.HTTPError: continue
 
 def req(method, url, data=None, headers=None, raw=None):
     if data is not None: raw = urllib.parse.urlencode({**data, "access_token": TOKEN}).encode()
@@ -50,7 +72,9 @@ def reel(p):
 if __name__ == "__main__":
     p = json.load(open(sys.argv[1]))
     try:
-        if not TOKEN or not IG: raise RuntimeError("faltam IG_ACCESS_TOKEN / IG_USER_ID no ambiente")
+        if not TOKEN: raise RuntimeError("falta IG_ACCESS_TOKEN no ambiente")
+        descobre()
+        if not IG: raise RuntimeError("não achei a conta do Instagram ligada a este token")
         mid, link = (reel if p["tipo"] == "reel" else carrossel)(p)
         print(json.dumps({"ok": True, "media_id": mid, "permalink": link}))
     except Exception as e:

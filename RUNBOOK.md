@@ -10,7 +10,7 @@ Credenciais (só no ambiente, nunca em arquivo ou chat): `IG_ACCESS_TOKEN`, `IG_
 deste repositório, servida em `https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/<caminho>`.
 
 ## Rodada de PUBLICAÇÃO (12h, 15h, 19h)
-1. Se `IG_ACCESS_TOKEN` ou `IG_USER_ID` não existirem no ambiente: não publique nada; responda "sem token" e pare.
+1. Se `IG_ACCESS_TOKEN` não existir no ambiente: não publique nada; responda "sem token" e pare.
 2. Leia `posts` com `status == "agendado"`. Publique os que têm `quando` entre agora − 6 h e agora + 5 min,
    em ordem de horário. Nunca publique o mesmo documento duas vezes (confira `status` logo antes).
 3. Para cada um: grave `{tipo, legenda, midia}` em `post.json` e rode `python3 publicar.py post.json`.
