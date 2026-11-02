@@ -43,7 +43,7 @@ def confere_legenda(p, prob):
     if len(re.findall(r"#\w+", L)) > 30: prob.append("mais de 30 hashtags")
     if not re.search(r"link (na|da) bio", L, re.I): prob.append("legenda sem 'link na bio'")
     if not re.search(r"inscri[çc][õo]es", L, re.I): prob.append("legenda sem o CTA de inscrições")
-    if re.search(r"\blive\b|31/10|31 de outubro", L, re.I): prob.append("legenda menciona a live (já passou)")
+    if re.search(r"\blive\b|ao vivo|31/10|31 de outubro", L, re.I): prob.append("legenda menciona a live (já passou)")
     if q and q.date() > datetime(2026, 11, 30).date() and re.search(r"black friday", L, re.I):
         prob.append("menciona Black Friday depois de 30/11")
         nova = "\n".join(l for l in nova.split("\n") if not re.search(r"black friday", l, re.I))
