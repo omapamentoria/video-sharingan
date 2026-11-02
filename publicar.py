@@ -3,7 +3,7 @@ Uso: python3 publicar.py post.json   -> imprime JSON {"ok": true, "media_id": ..
 post.json: {"tipo": "reel"|"carrossel", "legenda": "...", "midia": [urls públicas], "video_local": "caminho opcional do .mp4"}
 Variável de ambiente: IG_ACCESS_TOKEN (opcionais: IG_USER_ID e IG_API_HOST; se faltarem, são descobertos pelo token).
 - Carrossel: cada imagem precisa de URL pública (JPG); até 10 imagens.
-- Reel: o vídeo é enviado direto para a Meta (upload resumível), então não precisa de URL pública."""
+- Reel: a Meta baixa o vídeo pelo link público (midia[0]); se falhar, tenta o upload direto (resumível)."""
 import json, os, sys, time, urllib.request, urllib.parse, urllib.error
 
 TOKEN = os.environ.get("IG_ACCESS_TOKEN", ""); IG = os.environ.get("IG_USER_ID", "")
@@ -63,6 +63,14 @@ def carrossel(p):
     return publica(cid)
 
 def reel(p):
+    # Primeiro pelo link público (a Meta baixa o vídeo da branch instagram-midia). O upload direto dos bytes
+    # (resumable) falhou com o token de usuário do sistema ("400 ProcessingFailedError") e fica só como reserva.
+    if p.get("midia") and not p.get("video_local"):
+        try:
+            c = req("POST", f"{HOST}/{IG}/media", {"media_type": "REELS", "video_url": p["midia"][0], "caption": p["legenda"], "share_to_feed": "true"})
+            return publica(c["id"])
+        except RuntimeError as e:
+            print(json.dumps({"aviso": f"video_url falhou, tentando upload direto: {str(e)[:300]}"}), file=sys.stderr)
     c = req("POST", f"{HOST}/{IG}/media", {"media_type": "REELS", "upload_type": "resumable", "caption": p["legenda"], "share_to_feed": "true"})
     if p.get("video_local"): corpo = open(p["video_local"], "rb").read()
     else: corpo = urllib.request.urlopen(p["midia"][0], timeout=300).read()
