@@ -54,7 +54,7 @@ Objetivo: deixar no calendário os posts do dia (ou dos próximos N dias, quando
 4. No fim, rode a VERIFICAÇÃO (abaixo) do dia.
 5. Resposta final: uma linha por post (publicado / erro).
 
-## Rodada de VERIFICAÇÃO (12h31, 15h31, 19h31 e 22h01; também no fim de cada PUBLICAÇÃO e do AGENDAMENTO das 7h)
+## Rodada de VERIFICAÇÃO (12h31, 15h31, 19h31 e 21h31; também no fim de cada PUBLICAÇÃO e do AGENDAMENTO das 7h)
 Objetivo: nenhum Reel ou carrossel fica sem sair. Se algo falhou, trabalhar até postar.
 0. `git pull`. Token como na PUBLICAÇÃO.
 1. Exporte para `verifica.json` os posts dos últimos 3 dias e de hoje (com `id`) e rode
