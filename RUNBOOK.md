@@ -89,6 +89,8 @@ Objetivo: nenhum Reel ou carrossel fica sem sair. Se algo falhou, trabalhar até
    2–4 frases com os fatos, chamada para salvar/compartilhar, depois
    "📍 As inscrições da Mentoria MAPA 2027 estão abertas.\n👉 Link na bio.", "Fontes: ..." e 4–5 hashtags.
    Nunca mencionar live. Tom: próximo, direto, sem exagero.
+   Inclua também o campo `previa`: `python3 previa.py slides/slide_*.jpg` (o Calendário de Posts não carrega
+   imagens externas; sem a prévia, a notícia aparece sem imagens na página).
 6. Rode a REVISÃO só da notícia criada.
 
 ## Regras
