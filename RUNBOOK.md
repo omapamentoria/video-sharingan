@@ -38,6 +38,7 @@ Objetivo: deixar no calendário os posts do dia (ou dos próximos N dias, quando
 4. Resposta: lista curta do que foi revisado e do que mudou.
 
 ## Rodada de PUBLICAÇÃO (12h, 15h, 19h)
+0. `git pull` antes de tudo (o `publicar.py` pode ter sido corrigido).
 1. Token: use `IG_ACCESS_TOKEN` do ambiente; se não existir, use o arquivo `~/.mapa/ig_token` (fora do repositório,
    permissão 600). Se o arquivo sumiu (container novo), recrie-o com o token que o dono passou nesta conversa.
    Rode o publicador com `IG_ACCESS_TOKEN="$(cat ~/.mapa/ig_token)" python3 publicar.py post.json`.
