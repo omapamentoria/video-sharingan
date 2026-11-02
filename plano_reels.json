@@ -95,7 +95,7 @@
    "legenda": "A vazão veio em litros por HORA. A potência é em joules por SEGUNDO. ⏱️\nSe fizer a conta com 3.600 direto, vai dar errado.\n\nPotência hídrica = densidade × vazão × gravidade × altura\n1 hora = 3.600 segundos → o 3.600 corta com o 3.600\nP = 30 × 10 = 300 W = 3 × 10² W. Letra C. ✅\n\nNa reta final, olho nas unidades!\n\n🗺️ Mentoria MAPA 2027: inscrições abertas.\n👉 Clica no link da bio e começa pelo caminho certo.\n\n#física #enem #ssa3 #unidades #retafinal",
    "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/fisica_hora_segundo.mp4",
    "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/fisica_hora_segundo.jpg",
-   "pronto": false
+   "pronto": true
   },
   {
    "id": "fisica_lampada_queimou",
