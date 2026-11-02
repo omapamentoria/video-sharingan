@@ -1,5 +1,5 @@
 {
- "regra": "Um Reel por dia às 12h, na ordem desta lista, pulando os que não estão prontos (pronto=false) e os que já estão no calendário. Conteúdo de ENEM antes de 8/11 e 15/11.",
+ "regra": "Um Reel por dia às 12h, na ordem desta lista, pulando os que não estão prontos (pronto=false) e os que já estão no calendário. Conteúdo de ENEM antes de 8/11 e 15/11. Reels com \"ja_postado\" nunca entram no calendário.",
  "reels": [
   {
    "id": "aprovados_padrao",
@@ -15,7 +15,8 @@
    "legenda": "Esquece o cronograma do cursinho: o seu programa tem que ser seu. 🎯\n\nNo ENEM não passa quem acerta todas, passa quem sabe priorizar.\nE quanto mais você detalha como está errando, mais fácil fica resolver o erro.\n\nVocê não precisa ter feito tudo desde o início do ano. Se começar agora, ainda dá para evoluir muito.\n\n📍 As inscrições da Mentoria MAPA 2027 estão abertas.\n👉 Link na bio.\n\n#enem #priorizar #estudos #vestibular",
    "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/priorizar_2025.mp4",
    "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/priorizar_2025.jpg",
-   "pronto": true
+   "pronto": false,
+   "ja_postado": "Já foi postado no Instagram antes da automação: não repetir."
   },
   {
    "id": "enem_1_minuto_porcentagem",
@@ -63,7 +64,8 @@
    "legenda": "Desorganizada, sem norte, achando que não era capaz. 💭\nFoi assim que a Giovanna e a Manu chegaram no MAPA. Hoje, a Giovanna foi aprovada em Medicina na FPS e a Manu passou em Direito na Federal.\n\nA diferença? Mentores que organizaram a rotina e ajustaram a rota junto com elas.\n\n📍 As inscrições da Mentoria MAPA 2027 estão abertas.\n👉 Link na bio.\n\n#vestibular #enem #ssa3 #medicina #mentoria",
    "video": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/live_depoimentos.mp4",
    "capa": "https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/reels/live_depoimentos.jpg",
-   "pronto": true
+   "pronto": false,
+   "ja_postado": "Já foi postado no Instagram antes da automação: não repetir."
   },
   {
    "id": "enem_1_minuto_escala",

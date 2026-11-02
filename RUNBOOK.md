@@ -3,7 +3,7 @@
 Fila única: **Calendário de Posts MAPA** — artifact `https://claude.ai/artifact/PfeNXpXEZcuZBFDyCdx3jw`,
 banco do artifact, coleção `posts` (ler/escrever com a ferramenta ArtifactData).
 Campos de cada post: `tipo` ("reel" | "carrossel"), `titulo`, `legenda`, `midia` (URLs públicas, na ordem),
-`quando` (ISO com -03:00), `status` ("agendado" | "publicado" | "erro" | "rascunho"), `origem`.
+`quando` (ISO com -03:00), `status` ("agendado" | "publicado" | "erro" | "perdido" | "rascunho"), `tentativas`, `origem`.
 
 Credenciais (só no ambiente, nunca em arquivo ou chat): `IG_ACCESS_TOKEN`, `IG_USER_ID`
 (token do "login do Instagram"; host padrão graph.instagram.com). Mídia pública: branch `instagram-midia`
@@ -13,9 +13,10 @@ deste repositório, servida em `https://raw.githubusercontent.com/omapamentoria/
 Objetivo: deixar no calendário os posts do dia (ou dos próximos N dias, quando pedido), seguindo o planejamento.
 1. `git pull`. Leia `plano_reels.json` (ordem oficial dos Reels) e os `posts` do calendário.
 2. **Reel das 12h**: se ainda não houver post `tipo: "reel"` para o dia, pegue o primeiro Reel do plano com
-   `pronto: true` que ainda não está no calendário e crie o documento `reel-AAAA-MM-DD`:
+   `pronto: true`, sem `ja_postado`, que ainda não está no calendário (conta como "no calendário" só um `reel-` com
+   `plano_id` igual e `status` "agendado", "publicado" ou "erro"; um Reel "perdido" volta para a fila) e crie o documento `reel-AAAA-MM-DD`:
    `tipo: "reel"`, `titulo`, `legenda` (a do plano), `midia: [video]`, `capa`, `quando: "AAAA-MM-DDT12:00:00-03:00"`,
-   `status: "agendado"`, `origem: "videos"`. Sem Reel pronto disponível: não crie nada e avise na resposta.
+   `status: "agendado"`, `origem: "videos"`, `plano_id` (o `id` do plano). Sem Reel pronto disponível: não crie nada e avise na resposta.
 3. **Carrossel das 19h**: confirme que existe `car-AAAA-MM-DD` agendado. Se faltar, avise (não invente conteúdo).
 4. **Notícia das 15h**: não crie aqui; ela nasce na rodada das 14h20. Só confirme que não há outro post às 15h.
 5. Pedido "agende os próximos N dias": repita 2–4 para cada dia, nunca dois Reels no mesmo dia.
@@ -46,10 +47,30 @@ Objetivo: deixar no calendário os posts do dia (ou dos próximos N dias, quando
 2. Leia `posts` com `status == "agendado"`. Publique os que têm `quando` entre agora − 6 h e agora + 5 min,
    em ordem de horário. Nunca publique o mesmo documento duas vezes (confira `status` logo antes).
 3. Para cada um: grave `{tipo, legenda, midia}` em `post.json` e rode `python3 publicar.py post.json`.
-   - ok → `update` do documento: `status: "publicado"`, `ig_media_id`, `permalink`, `publicado_em` (ISO).
-   - erro → `update`: `status: "erro"`, `erro` (a mensagem). Não tente de novo na mesma rodada.
-4. Posts agendados há mais de 6 h e não publicados: marque `status: "erro"`, `erro: "horário perdido"`.
+   O `publicar.py` já tenta 3 vezes (espera 1 e 3 min) e, antes de cada tentativa, procura na conta um post com a
+   mesma legenda, para nunca duplicar (se achar, devolve `ja_estava_publicado: true` com o link).
+   - ok → `update` do documento: `status: "publicado"`, `ig_media_id`, `permalink`, `publicado_em` (ISO), apague `erro`.
+   - erro → `update`: `status: "erro"`, `erro` (a mensagem), `tentativas` (+1). A rodada de VERIFICAÇÃO tenta de novo.
+4. No fim, rode a VERIFICAÇÃO (abaixo) do dia.
 5. Resposta final: uma linha por post (publicado / erro).
+
+## Rodada de VERIFICAÇÃO (12h31, 15h31, 19h31 e 22h01; também no fim de cada PUBLICAÇÃO e do AGENDAMENTO das 7h)
+Objetivo: nenhum Reel ou carrossel fica sem sair. Se algo falhou, trabalhar até postar.
+0. `git pull`. Token como na PUBLICAÇÃO.
+1. Exporte para `verifica.json` os posts dos últimos 3 dias e de hoje (com `id`) e rode
+   `python3 verificar.py verifica.json`. Para cada item:
+   - `publicar`: confira o `status` de novo (não pode ter virado "publicado") e publique como na PUBLICAÇÃO
+     (`tentativas` +1 em caso de erro). Antes, entenda o erro anterior e corrija a causa se estiver ao seu alcance:
+     URL de mídia fora do ar (confira com curl; se a imagem/vídeo sumiu da branch `instagram-midia`, recoloque),
+     legenda acima de 2.200 caracteres ou com mais de 30 hashtags (encurte), imagem fora de 1080x1350/1080x1080
+     (corrija o arquivo), token expirado (avise o dono). Erros temporários da Meta (5xx, "try again", limite de taxa):
+     só tente de novo.
+   - `marcar_publicado`: o post já está na conta; só atualize o documento (`status: "publicado"`, `ig_media_id`,
+     `permalink`).
+   - `republicar`: o post sumiu da conta; publique de novo e atualize o documento.
+   - `perdido`: `update` com `status: "perdido"` e o motivo em `erro`. Reel perdido volta para a fila do plano (a
+     rodada das 7h o agenda de novo num dia livre). Carrossel ou notícia perdidos: avise o dono na resposta.
+2. Resposta: uma linha por item tratado; se não houver nada, responda "tudo publicado".
 
 ## Rodada da NOTÍCIA DO DIA (14h20, para publicar às 15h)
 1. Pesquise as notícias das últimas 24 h sobre **ENEM, SSA (UPE) e FPS** (WebSearch, modo extended).

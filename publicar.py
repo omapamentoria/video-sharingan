@@ -77,13 +77,42 @@ def reel(p):
     req("POST", c["uri"], raw=corpo, headers={"Authorization": f"OAuth {TOKEN}", "offset": "0", "file_size": str(len(corpo))})
     return publica(c["id"])
 
+def ja_publicado(legenda, horas=36):
+    """Procura nos posts recentes da conta um com a mesma legenda (protege contra post duplicado quando a Meta
+    publicou mas a resposta se perdeu). Devolve (media_id, permalink) ou None."""
+    alvo = " ".join((legenda or "").split())[:200]
+    r = get(f"{IG}/media", fields="id,caption,permalink,timestamp", limit=25)
+    for m in r.get("data", []):
+        if " ".join((m.get("caption") or "").split())[:200] == alvo:
+            ts = time.mktime(time.strptime(m["timestamp"][:19], "%Y-%m-%dT%H:%M:%S")) - time.timezone
+            if time.time() - ts < horas * 3600: return m["id"], m.get("permalink")
+    return None
+
+def confere(media_id):
+    """Confirma que o post existe na conta. Devolve o permalink ou None."""
+    try: return get(media_id, fields="id,permalink").get("permalink")
+    except RuntimeError: return None
+
+TENTATIVAS, ESPERAS = 3, (60, 180)
+
 if __name__ == "__main__":
-    p = json.load(open(sys.argv[1]))
-    try:
-        if not TOKEN: raise RuntimeError("falta IG_ACCESS_TOKEN no ambiente")
-        descobre()
-        if not IG: raise RuntimeError("não achei a conta do Instagram ligada a este token")
-        mid, link = (reel if p["tipo"] == "reel" else carrossel)(p)
-        print(json.dumps({"ok": True, "media_id": mid, "permalink": link}))
-    except Exception as e:
-        print(json.dumps({"ok": False, "erro": str(e)[:600]})); sys.exit(1)
+    # Uso extra: publicar.py --confere <media_id>  -> {"ok": true/false, "permalink": ...}
+    if sys.argv[1] == "--confere":
+        descobre(); link = confere(sys.argv[2]); print(json.dumps({"ok": bool(link), "permalink": link})); sys.exit(0 if link else 1)
+    p = json.load(open(sys.argv[1])); erro = ""
+    if not TOKEN: print(json.dumps({"ok": False, "erro": "falta IG_ACCESS_TOKEN no ambiente"})); sys.exit(1)
+    for t in range(TENTATIVAS):
+        try:
+            descobre()
+            if not IG: raise RuntimeError("não achei a conta do Instagram ligada a este token")
+            ja = ja_publicado(p["legenda"])
+            if ja:
+                print(json.dumps({"ok": True, "media_id": ja[0], "permalink": ja[1], "ja_estava_publicado": True})); sys.exit(0)
+            mid, link = (reel if p["tipo"] == "reel" else carrossel)(p)
+            print(json.dumps({"ok": True, "media_id": mid, "permalink": link or confere(mid), "tentativas": t + 1})); sys.exit(0)
+        except SystemExit: raise
+        except Exception as e:
+            erro = str(e)[:600]
+            print(json.dumps({"tentativa": t + 1, "erro": erro}), file=sys.stderr)
+            if t < TENTATIVAS - 1: time.sleep(ESPERAS[t])
+    print(json.dumps({"ok": False, "erro": erro, "tentativas": TENTATIVAS})); sys.exit(1)
