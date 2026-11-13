@@ -35,7 +35,16 @@ def categoria(p):
     """Assunto do post, para comparar o que puxa engajamento. Usa plano_id (Reels) e palavras do título."""
     pid = (p.get("plano_id") or "").lower(); t = ((p.get("titulo") or "") + " " + pid).lower()
     if p.get("origem") == "noticias": return "Notícia do dia"
-    regras = [("enem_1_minuto", "Questão do ENEM em 1 minuto"), ("fórmula", "Fórmulas / revisão"), ("formula", "Fórmulas / revisão"),
+    regras = [("aulão", "Aulão em escola (bastidor)"), ("aulao", "Aulão em escola (bastidor)"), ("festa", "Bastidores / comunidade MAPA"),
+              ("+1 ano", "Bastidores / comunidade MAPA"), ("um dia comigo", "Bastidores / comunidade MAPA"), ("absurdo", "Bastidores / comunidade MAPA"),
+              ("aprovação", "Aprovação de aluno (foto)"), ("aprovacao", "Aprovação de aluno (foto)"), ("banca da fps", "Aprovação de aluno (foto)"),
+              ("dominado", "Aprovados / resultado"), ("chegou ao mapa", "Depoimento / história de aluno"), ("foi assim que", "Depoimento / história de aluno"),
+              ("análise", "Análise de prova"), ("analise", "Análise de prova"), ("gabarito", "Análise de prova"), ("fez o ssa", "Análise de prova"),
+              ("fez o primeiro dia", "Análise de prova"), ("erro", "Método MAPA (erros, correção)"), ("diagnóstico", "Método MAPA (erros, correção)"),
+              ("cronograma", "Método MAPA (erros, correção)"), ("caderno", "Método MAPA (erros, correção)"), ("interpretação", "Método MAPA (erros, correção)"),
+              ("desconto", "Venda / mentoria"), ("lançar", "Venda / mentoria"), ("próximo passo", "Venda / mentoria"), ("nasceu", "Institucional"),
+              ("direção", "Motivacional"), ("meses podem", "Motivacional"), ("começar tarde", "Motivacional"), ("começado tarde", "Motivacional"),
+              ("enem_1_minuto", "Questão do ENEM em 1 minuto"), ("fórmula", "Fórmulas / revisão"), ("formula", "Fórmulas / revisão"),
               ("revis", "Fórmulas / revisão"), ("checklist", "Checklist / guia de prova"), ("véspera", "Véspera / dia de prova"),
               ("vespera", "Véspera / dia de prova"), ("boa prova", "Véspera / dia de prova"), ("pegadinha", "Pegadinhas"),
               ("redac", "Redação"), ("redaç", "Redação"), ("fisica", "Física"), ("física", "Física"), ("bio", "Biologia"),
@@ -67,6 +76,12 @@ def agrupa(itens, chave):
     return dict(sorted(((k, v) for k, v in out.items() if v), key=lambda kv: -kv[1]["nota_media"]))
 
 def main():
+    if sys.argv[1] == "--relatorio":  # refaz categorias e relatório a partir de um desempenho.json, sem chamar a API
+        r = json.load(open(sys.argv[2])); saida = os.path.dirname(sys.argv[2]) or "."
+        for x in r["posts"]: x["categoria"] = categoria({**x, "origem": x["origem"] if x["origem"] == "noticias" else ""})
+        r["por_categoria"] = agrupa(r["posts"], lambda x: x["categoria"])
+        json.dump(r, open(sys.argv[2], "w"), ensure_ascii=False, indent=1)
+        open(f"{saida}/relatorio.md", "w").write(relatorio(r)); print(relatorio(r)); return
     cal = json.load(open(sys.argv[1])); saida = sys.argv[2] if len(sys.argv) > 2 else "desempenho"
     os.makedirs(saida, exist_ok=True)
     if not P.TOKEN: sys.exit("falta IG_ACCESS_TOKEN no ambiente")
@@ -133,7 +148,7 @@ def relatorio(r):
     return "\n".join(L)
 
 def recomendacoes(r):
-    R = []; cat = [(k, v) for k, v in r["por_categoria"].items() if v["posts"] >= 2] or list(r["por_categoria"].items())
+    R = []; cat = [(k, v) for k, v in r["por_categoria"].items() if v["posts"] >= 2 and k != "Outros"] or list(r["por_categoria"].items())
     if cat:
         R.append(f"- **Mais conteúdo de:** {', '.join(k for k, _ in cat[:3])} (maior nota média). Priorize esses assuntos na fila de Reels e nos carrosséis.")
         if len(cat) > 3: R.append(f"- **Menos conteúdo de:** {', '.join(k for k, _ in cat[-2:])} (menor nota média): reformule o gancho ou espace mais.")
