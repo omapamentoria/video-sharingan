@@ -80,7 +80,9 @@ Objetivo: nenhum Reel ou carrossel fica sem sair. Se algo falhou, trabalhar até
    e útil, faça um post de agenda/contagem regressiva com datas oficiais conferidas.
 2. Escolha o ângulo mais útil e interessante para o aluno (o que muda pra ele, o que fazer agora).
 3. Monte `spec.json` (veja `noticia_post.py`): capa (selo "NOTÍCIA DO DIA · DD/MM", título curto e forte,
-   subtítulo; use `numero`/`numero_txt` para contagens), 2–3 slides `lista` com `nota` citando a fonte, e o slide `cta`.
+   subtítulo; use `numero`/`numero_txt` para contagens), 2–3 slides `lista` e o slide `cta`. No topo do spec:
+   `fonte` (ex.: "Inep, 10/11/2026", aparece em todo slide), `tema` (ex.: "ENEM 2026", "SSA 2026", "FPS 2027") e
+   `data` ("DD/MM"). Modelo escuro "Plantão MAPA" aprovado pelo dono em 13/11; não mude o visual sem pedido.
    Renderize: `python3 noticia_post.py spec.json slides`.
 4. Publique as imagens na branch `instagram-midia` em `noticias/AAAA-MM-DD/` (commit + push) e confira que as URLs
    raw respondem 200 com `image/jpeg`.
