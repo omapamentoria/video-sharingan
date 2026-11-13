@@ -16,6 +16,16 @@ deste repositório, servida em `https://raw.githubusercontent.com/omapamentoria/
   e carrosséis que o MAPA monta), com `origem: "roteiro"`. É o horário de maior alcance. Se o post do roteiro do
   dia não estiver pronto, o carrossel da agência (`car-AAAA-MM-DD`) segura as 19h; se estiver, o `car-` do dia
   vira `rascunho` (fica guardado para outro dia).
+- **Prioridade é do roteiro.** Dia com 2 posts no roteiro: o 1º vai às 19h e o 2º ocupa as **15h** no lugar do Reel
+  da agência (o Reel volta para a fila). Com 3 ou mais, os extras também saem na rodada das 15h. Vídeos "ao vivo"
+  (análise de prova, resultado) saem assim que ficarem prontos, sem esperar horário.
+- **Carrosséis do roteiro: quem monta é o publicador** (o dono decidiu em 13/11; ninguém manda texto). O tema, o
+  gancho e o CTA estão no "Calendário de posts" da página do roteiro e na planilha
+  https://claude.ai/artifact/UVmZJgpB4Vhpk6r4B5dUBe (aba "Cronograma"; lida pelo conector Claude Docs). Pesquise e
+  confira o conteúdo em fontes confiáveis (edital, Inep, UPE, FPS; livros e sites de referência nas matérias),
+  monte com `carrossel/gerar.py` no visual dos carrosséis do MAPA e agende **2 dias antes**. Nada inventado:
+  carrossel com dado do MAPA (resultados, prints, números de lote, vagas, preço) só com material real do dono —
+  se faltar, peça e não publique.
 
 ## Rodada de AGENDAMENTO (todo dia às 7h, e sempre que o dono pedir "agende mais")
 Objetivo: deixar no calendário os posts do dia (ou dos próximos N dias, quando pedido), seguindo o planejamento.
@@ -25,7 +35,8 @@ Objetivo: deixar no calendário os posts do dia (ou dos próximos N dias, quando
    `plano_id` igual e `status` "agendado", "publicado" ou "erro"; um Reel "perdido" volta para a fila) e crie o documento `reel-AAAA-MM-DD`:
    `tipo: "reel"`, `titulo`, `legenda` (a do plano), `midia: [video]`, `capa`, `quando: "AAAA-MM-DDT15:00:00-03:00"`,
    `status: "agendado"`, `origem: "videos"`, `plano_id` (o `id` do plano). Sem Reel pronto disponível: não crie nada e avise na resposta.
-3. **19h**: veja no "Calendário de posts" da página do roteiro o que vai ao ar hoje. Se o post do roteiro estiver
+3. **Carrosséis do roteiro**: monte os de hoje+2 dias que ainda não existem (veja "Grade de horários").
+   **19h**: veja no "Calendário de posts" da página do roteiro o que vai ao ar hoje. Se o post do roteiro estiver
    pronto (vídeo no Drive editado, ou carrossel montado), ele fica às 19h (`origem: "roteiro"`) e o `car-` do dia
    vira `rascunho`. Senão, confirme o `car-AAAA-MM-DD` agendado às 19h. Se faltar tudo, avise (não invente conteúdo).
 4. **Notícia das 12h**: não crie aqui; ela nasce na rodada das 11h20. Só confirme que não há outro post às 12h.
