@@ -27,6 +27,25 @@ deste repositório, servida em `https://raw.githubusercontent.com/omapamentoria/
   carrossel com dado do MAPA (resultados, prints, números de lote, vagas, preço) só com material real do dono —
   se faltar, peça e não publique.
 
+## Rodada de DESEMPENHO (toda segunda no agendamento das 7h, e sempre que o dono pedir)
+Objetivo: medir o que trouxe **seguidores, comentários, compartilhamentos, salvamentos e curtidas** e usar isso no
+planejamento. O foco é conteúdo de alto engajamento.
+1. Exporte do calendário todos os posts com `status: "publicado"` (com `id`; sem `previa`/`legenda`) para
+   `cal_pub.json` e rode `timeout 900 python3 desempenho.py cal_pub.json desempenho` (roda em segundo plano se passar
+   de 2 min). Ele consulta a API do Instagram post a post e também compara com os posts da conta fora do calendário.
+2. Leia `desempenho/relatorio.md`: top 5, os 5 mais fracos, médias por categoria, formato, origem, horário e dia.
+   A nota pesa curtida 1, comentário 3, salvo 3, compartilhamento 4, seguidor ganho 10. Post com menos de 48 h
+   não entra nas médias.
+3. Aplique no planejamento da semana (sem inventar conteúdo e sem mexer na grade de horários do dono):
+   - **Fila de Reels** (`plano_reels.json`): suba na ordem os Reels prontos das categorias com maior nota e
+     empurre para o fim os das categorias mais fracas. Commit com o motivo ("desempenho de DD/MM: …").
+   - **Carrosséis que eu monto**: copie o que funcionou (formato de "salvar pra depois", gancho em pergunta,
+     lista por assunto). Nos assuntos fracos, troque o gancho e o ângulo.
+   - **Legendas**: se comentário for o ponto fraco, feche com pergunta direta ("comenta aí…").
+   - Nunca repita o mesmo post. Repita a categoria com ângulo novo.
+4. Salve uma cópia de `desempenho/relatorio.md` em `relatorios/desempenho-AAAA-MM-DD.md` (commit na mapa-posts) e
+   responda ao dono com 3–5 linhas: o que mais trouxe seguidor/engajamento, o que caiu e o que muda na semana.
+
 ## Rodada de AGENDAMENTO (todo dia às 7h, e sempre que o dono pedir "agende mais")
 Objetivo: deixar no calendário os posts do dia (ou dos próximos N dias, quando pedido), seguindo o planejamento.
 1. `git pull`. Leia `plano_reels.json` (ordem oficial dos Reels) e os `posts` do calendário.
@@ -35,7 +54,8 @@ Objetivo: deixar no calendário os posts do dia (ou dos próximos N dias, quando
    `plano_id` igual e `status` "agendado", "publicado" ou "erro"; um Reel "perdido" volta para a fila) e crie o documento `reel-AAAA-MM-DD`:
    `tipo: "reel"`, `titulo`, `legenda` (a do plano), `midia: [video]`, `capa`, `quando: "AAAA-MM-DDT15:00:00-03:00"`,
    `status: "agendado"`, `origem: "videos"`, `plano_id` (o `id` do plano). Sem Reel pronto disponível: não crie nada e avise na resposta.
-3. **Carrosséis do roteiro**: monte os de hoje+2 dias que ainda não existem (veja "Grade de horários").
+3. **Carrosséis do roteiro**: monte os de hoje+2 dias que ainda não existem (veja "Grade de horários"), usando o
+   último `relatorios/desempenho-*.md` para escolher gancho e formato. Segunda-feira: rode antes a Rodada de DESEMPENHO.
    **19h**: veja no "Calendário de posts" da página do roteiro o que vai ao ar hoje. Se o post do roteiro estiver
    pronto (vídeo no Drive editado, ou carrossel montado), ele fica às 19h (`origem: "roteiro"`) e o `car-` do dia
    vira `rascunho`. Senão, confirme o `car-AAAA-MM-DD` agendado às 19h. Se faltar tudo, avise (não invente conteúdo).
