@@ -6,8 +6,8 @@ Checagens:
 - mídia: links públicos respondendo 200; carrossel com 2 a 10 imagens JPG 1080x1350/1080x1080; Reel em MP4 de 3 s a 15 min
 - legenda: até 2.200 caracteres, até 30 hashtags, CTA de inscrições + link na bio, nada de live/31 de outubro,
   "Black Friday" só até 30/11, sem datas passadas tratadas como futuras ("amanhã", "hoje") fora do dia do post
-- horário: ISO com -03:00 e dentro dos horários do plano (12h Reel, 15h notícia, 19h carrossel; nos dias de prova
-  o carrossel de "Boa prova" vai para 12h e o Reel para 19h)"""
+- horário: ISO com -03:00 e dentro dos horários do plano (desde 13/11: 12h notícia, 15h Reel da agência,
+  19h conteúdo do roteiro/carrossel; nos dias de prova o "Boa prova" vai às 12h e a notícia às 15h)"""
 import io, json, re, subprocess, sys, urllib.request
 from datetime import datetime
 
@@ -52,13 +52,16 @@ def confere_legenda(p, prob):
     return nova if nova != L else None
 
 # Dias de prova: o carrossel de "Boa prova" sai às 12h (antes do portão do ENEM, que fecha às 13h, e antes do
-# SSA 2, que é à tarde) e o Reel vai para as 19h. Datas conferidas no edital do ENEM 2026 e no site da UPE (SSA 2027).
+# SSA 2, que é à tarde) e a notícia vai para as 15h. Datas conferidas no edital do ENEM 2026 e no site da UPE (SSA 2027).
 DIAS_DE_PROVA = {"2026-11-08": "ENEM", "2026-11-15": "ENEM", "2026-12-06": "SSA", "2026-12-13": "SSA"}
 
 def horario_plano(p, dia):
-    if p.get("tipo") == "carrossel" and p.get("origem") == "noticias": return 15
+    # Grade definida pelo dono em 13/11/2026: notícia 12h (almoço), Reel da agência 15h, conteúdo do roteiro
+    # (origem "roteiro") e carrosséis 19h (maior alcance). Dia de prova: "Boa prova" 12h e notícia 15h.
     prova = dia in DIAS_DE_PROVA
-    return {"reel": 19 if prova else 12, "carrossel": 12 if prova else 19}.get(p.get("tipo"))
+    if p.get("origem") == "noticias": return 15 if prova else 12
+    if p.get("origem") == "roteiro": return 19
+    return {"reel": 15, "carrossel": 12 if prova else 19}.get(p.get("tipo"))
 
 def confere_horario(p, prob):
     try: q = datetime.fromisoformat(p["quando"])

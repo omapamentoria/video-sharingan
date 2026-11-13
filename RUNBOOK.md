@@ -9,24 +9,34 @@ Credenciais (só no ambiente, nunca em arquivo ou chat): `IG_ACCESS_TOKEN`, `IG_
 (token do "login do Instagram"; host padrão graph.instagram.com). Mídia pública: branch `instagram-midia`
 deste repositório, servida em `https://raw.githubusercontent.com/omapamentoria/video-sharingan/instagram-midia/<caminho>`.
 
+## Grade de horários (definida pelo dono em 13/11/2026)
+- **12h – Notícia do dia** (hora do almoço). Nasce na rodada das 11h20.
+- **15h – Reel da agência** (vídeos já editados, fila do `plano_reels.json`).
+- **19h – Conteúdo do roteiro** (página https://claude.ai/artifact/LzEcaehDNmrc23ouJWbXRK: vídeos 001–070 do Drive
+  e carrosséis que o MAPA monta), com `origem: "roteiro"`. É o horário de maior alcance. Se o post do roteiro do
+  dia não estiver pronto, o carrossel da agência (`car-AAAA-MM-DD`) segura as 19h; se estiver, o `car-` do dia
+  vira `rascunho` (fica guardado para outro dia).
+
 ## Rodada de AGENDAMENTO (todo dia às 7h, e sempre que o dono pedir "agende mais")
 Objetivo: deixar no calendário os posts do dia (ou dos próximos N dias, quando pedido), seguindo o planejamento.
 1. `git pull`. Leia `plano_reels.json` (ordem oficial dos Reels) e os `posts` do calendário.
-2. **Reel das 12h**: se ainda não houver post `tipo: "reel"` para o dia, pegue o primeiro Reel do plano com
+2. **Reel das 15h**: se ainda não houver post `tipo: "reel"` para o dia, pegue o primeiro Reel do plano com
    `pronto: true`, sem `ja_postado`, que ainda não está no calendário (conta como "no calendário" só um `reel-` com
    `plano_id` igual e `status` "agendado", "publicado" ou "erro"; um Reel "perdido" volta para a fila) e crie o documento `reel-AAAA-MM-DD`:
-   `tipo: "reel"`, `titulo`, `legenda` (a do plano), `midia: [video]`, `capa`, `quando: "AAAA-MM-DDT12:00:00-03:00"`,
+   `tipo: "reel"`, `titulo`, `legenda` (a do plano), `midia: [video]`, `capa`, `quando: "AAAA-MM-DDT15:00:00-03:00"`,
    `status: "agendado"`, `origem: "videos"`, `plano_id` (o `id` do plano). Sem Reel pronto disponível: não crie nada e avise na resposta.
-3. **Carrossel das 19h**: confirme que existe `car-AAAA-MM-DD` agendado. Se faltar, avise (não invente conteúdo).
-4. **Notícia das 15h**: não crie aqui; ela nasce na rodada das 14h20. Só confirme que não há outro post às 15h.
+3. **19h**: veja no "Calendário de posts" da página do roteiro o que vai ao ar hoje. Se o post do roteiro estiver
+   pronto (vídeo no Drive editado, ou carrossel montado), ele fica às 19h (`origem: "roteiro"`) e o `car-` do dia
+   vira `rascunho`. Senão, confirme o `car-AAAA-MM-DD` agendado às 19h. Se faltar tudo, avise (não invente conteúdo).
+4. **Notícia das 12h**: não crie aqui; ela nasce na rodada das 11h20. Só confirme que não há outro post às 12h.
 5. Pedido "agende os próximos N dias": repita 2–4 para cada dia, nunca dois Reels no mesmo dia.
 6. **Dias de prova** (8/11 e 15/11 ENEM; 6/12 e 13/12 SSA 1 e 2 — lista em `DIAS_DE_PROVA`, no `revisar.py`):
-   os horários se invertem. O carrossel de "Boa prova" sai às **12h** (antes do portão do ENEM fechar, às 13h, e antes
-   do SSA 2, à tarde) e o Reel vai para as **19h**. Ajuste `quando` do `car-` e do `reel-` desses dias.
+   o carrossel de "Boa prova" sai às **12h** (antes do portão do ENEM fechar, às 13h, e antes do SSA 2, à tarde),
+   a notícia vai para as **15h** e o Reel da agência não sai (volta para a fila). 19h segue com o conteúdo do roteiro.
    Nunca publicar "Boa prova hoje" depois que a prova começou.
 7. No fim, rode a REVISÃO dos posts do dia (ou do período agendado).
 
-## Rodada de REVISÃO (depois do agendamento das 7h, depois da notícia das 14h20 e sob demanda)
+## Rodada de REVISÃO (depois do agendamento das 7h, depois da notícia das 11h20 e sob demanda)
 1. Exporte para `revisao.json` os posts a revisar (com `id`), rode `python3 revisar.py revisao.json`.
 2. Para cada problema:
    - com `legenda_corrigida`: aplique com `update` (ou `str_replace`) no documento.
@@ -72,7 +82,7 @@ Objetivo: nenhum Reel ou carrossel fica sem sair. Se algo falhou, trabalhar até
      rodada das 7h o agenda de novo num dia livre). Carrossel ou notícia perdidos: avise o dono na resposta.
 2. Resposta: uma linha por item tratado; se não houver nada, responda "tudo publicado".
 
-## Rodada da NOTÍCIA DO DIA (14h20, para publicar às 15h)
+## Rodada da NOTÍCIA DO DIA (11h20, para publicar às 12h; em dia de prova, às 15h)
 1. Pesquise as notícias das últimas 24 h sobre **ENEM, SSA (UPE) e FPS** (WebSearch, modo extended).
    Prefira fontes oficiais (gov.br/inep, gov.br/mec, processodeingresso.upe.pe.gov.br, fps.edu.br) e veículos
    sérios (Agência Brasil, G1, JC, Diario de Pernambuco, CBN Recife). Abra a fonte (WebFetch) e confira cada
@@ -87,7 +97,7 @@ Objetivo: nenhum Reel ou carrossel fica sem sair. Se algo falhou, trabalhar até
 4. Publique as imagens na branch `instagram-midia` em `noticias/AAAA-MM-DD/` (commit + push) e confira que as URLs
    raw respondem 200 com `image/jpeg`.
 5. Crie o documento `not-AAAA-MM-DD` em `posts`: `tipo: "carrossel"`, `titulo`, `midia` (URLs), `quando:
-   "AAAA-MM-DDT15:00:00-03:00"`, `status: "agendado"`, `origem: "noticias"`, e a `legenda`: gancho forte,
+   "AAAA-MM-DDT12:00:00-03:00"` (dia de prova: 15h), `status: "agendado"`, `origem: "noticias"`, e a `legenda`: gancho forte,
    2–4 frases com os fatos, chamada para salvar/compartilhar, depois
    "📍 As inscrições da Mentoria MAPA 2027 estão abertas.\n👉 Link na bio.", "Fontes: ..." e 4–5 hashtags.
    Nunca mencionar live. Tom: próximo, direto, sem exagero.
