@@ -114,6 +114,10 @@ Objetivo: nenhum Reel ou carrossel fica sem sair. Se algo falhou, trabalhar até
 2. Resposta: uma linha por item tratado; se não houver nada, responda "tudo publicado".
 
 ## Rodada da NOTÍCIA DO DIA (11h20, para publicar às 12h; em dia de prova, às 15h)
+**Só notícia forte** (desempenho de 13/11: notícia diária é o formato mais fraco da conta). Forte = fato oficial
+novo que muda algo para o aluno (gabarito, nota, prazo, inscrição, data, regra). Sem isso, não crie notícia: crie
+`reel-AAAA-MM-DD-12h` com o próximo Reel pronto da fila (mesmas regras do agendamento, `quando` às 12h) e responda
+"sem notícia forte hoje; 12h com o Reel X". Em dia de prova do ENEM não há notícia (alunos em prova).
 1. Pesquise as notícias das últimas 24 h sobre **ENEM, SSA (UPE) e FPS** (WebSearch, modo extended).
    Prefira fontes oficiais (gov.br/inep, gov.br/mec, processodeingresso.upe.pe.gov.br, fps.edu.br) e veículos
    sérios (Agência Brasil, G1, JC, Diario de Pernambuco, CBN Recife). Abra a fonte (WebFetch) e confira cada
