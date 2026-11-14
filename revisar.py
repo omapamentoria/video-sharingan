@@ -61,6 +61,7 @@ def horario_plano(p, dia):
     prova = dia in DIAS_DE_PROVA
     if p.get("origem") == "noticias": return 15 if prova else 12
     if p.get("origem") == "roteiro": return 19
+    if str(p.get("id", "")).endswith("-12h"): return 12  # Reel no lugar da notícia (dia sem notícia forte)
     return {"reel": 15, "carrossel": 12 if prova else 19}.get(p.get("tipo"))
 
 def confere_horario(p, prob):
