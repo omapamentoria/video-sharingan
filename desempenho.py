@@ -35,7 +35,8 @@ def categoria(p):
     """Assunto do post, para comparar o que puxa engajamento. Usa plano_id (Reels) e palavras do título."""
     pid = (p.get("plano_id") or "").lower(); t = ((p.get("titulo") or "") + " " + pid).lower()
     if p.get("origem") == "noticias": return "Notícia do dia"
-    regras = [("aulão", "Aulão em escola (bastidor)"), ("aulao", "Aulão em escola (bastidor)"), ("festa", "Bastidores / comunidade MAPA"),
+    regras = [("o que caiu", "Análise de prova"), ("energia", "Bastidores / comunidade MAPA"), ("maiores sonhos", "Motivacional"),
+              ("eu do pas", "Motivacional"), ("aulão", "Aulão em escola (bastidor)"), ("aulao", "Aulão em escola (bastidor)"), ("festa", "Bastidores / comunidade MAPA"),
               ("+1 ano", "Bastidores / comunidade MAPA"), ("um dia comigo", "Bastidores / comunidade MAPA"), ("absurdo", "Bastidores / comunidade MAPA"),
               ("aprovação", "Aprovação de aluno (foto)"), ("aprovacao", "Aprovação de aluno (foto)"), ("banca da fps", "Aprovação de aluno (foto)"),
               ("dominado", "Aprovados / resultado"), ("chegou ao mapa", "Depoimento / história de aluno"), ("foi assim que", "Depoimento / história de aluno"),
