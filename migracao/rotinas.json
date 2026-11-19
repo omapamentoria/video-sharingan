@@ -1,0 +1,32 @@
+[
+ {
+  "nome": "MAPA – agendar e revisar (7h)",
+  "cron": "CRON_TZ=America/Sao_Paulo 0 7 * * *",
+  "prompt": "Rodada de AGENDAMENTO das 7h: siga a seção \"Rodada de AGENDAMENTO\" do RUNBOOK.md para o dia de hoje (git pull da branch mapa-posts antes) e, no fim, a \"Rodada de REVISÃO\" dos posts de hoje. Responda em poucas linhas."
+ },
+ {
+  "nome": "MAPA – notícia do dia (11h20)",
+  "cron": "CRON_TZ=America/Sao_Paulo 20 11 * * *",
+  "prompt": "Rodada da NOTÍCIA DO DIA: siga a seção \"Rodada da NOTÍCIA DO DIA\" do RUNBOOK.md (git pull da branch mapa-posts antes). O post fica agendado para hoje às 12h (em dia de prova, 15h), com o campo previa. Responda em poucas linhas."
+ },
+ {
+  "nome": "MAPA – publicar 12h",
+  "cron": "CRON_TZ=America/Sao_Paulo 1 12 * * *",
+  "prompt": "Rodada de PUBLICAÇÃO das 12h: siga a seção \"Rodada de PUBLICAÇÃO\" do RUNBOOK.md (git pull da branch mapa-posts antes). Responda em poucas linhas."
+ },
+ {
+  "nome": "MAPA – publicar 15h",
+  "cron": "CRON_TZ=America/Sao_Paulo 1 15 * * *",
+  "prompt": "Rodada de PUBLICAÇÃO das 15h: siga a seção \"Rodada de PUBLICAÇÃO\" do RUNBOOK.md (git pull da branch mapa-posts antes). Responda em poucas linhas."
+ },
+ {
+  "nome": "MAPA – publicar 19h",
+  "cron": "CRON_TZ=America/Sao_Paulo 1 19 * * *",
+  "prompt": "Rodada de PUBLICAÇÃO das 19h: siga a seção \"Rodada de PUBLICAÇÃO\" do RUNBOOK.md (git pull da branch mapa-posts antes). Responda em poucas linhas."
+ },
+ {
+  "nome": "MAPA – verificação (12h31/15h31/19h31/21h31)",
+  "cron": "CRON_TZ=America/Sao_Paulo 31 12,15,19,21 * * *",
+  "prompt": "Rodada de VERIFICAÇÃO do RUNBOOK.md (git pull da branch mapa-posts antes): exporte os posts de hoje e dos últimos 3 dias do Calendário de Posts MAPA, rode `python3 verificar.py verifica.json` e trate cada item. Nunca publique o mesmo post duas vezes. Se não houver nada, responda só \"tudo publicado\"."
+ }
+]

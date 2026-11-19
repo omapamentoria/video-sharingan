@@ -4,7 +4,10 @@ spec: {"tag":"FÍSICA · ENEM","data":"SEX · 13 NOV","slides":[{"tipo":"capa","
        {"tipo":"formulas","titulo":"Cinemática","itens":[["rótulo","fórmula em HTML"],...]}, {"tipo":"cta"}]}
 Fórmulas aceitam HTML: <sub>, <sup>, e frações com <span class=fr><b>num</b><b>den</b></span>."""
 import json, os, sys, asyncio
-from playwright.sync_api import sync_playwright
+try:
+    from playwright.sync_api import sync_playwright
+except ImportError:
+    sync_playwright = None  # sem playwright no Python: usa o Node (carrossel/shot.js)
 M = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FD = M + "/marca/fontes/"
 CSS = """
@@ -86,6 +89,11 @@ def pagina(spec, s, i, n):
 if __name__ == "__main__":
     spec = json.load(open(sys.argv[1])); out = sys.argv[2]; os.makedirs(out, exist_ok=True)
     sl = spec["slides"]; n = len(sl)
+    if sync_playwright is None:
+        import subprocess
+        for i, s in enumerate(sl, 1): open(f"{out}/slide-{i:02d}.html", "w").write(pagina(spec, s, i, n))
+        subprocess.run(["node", os.path.dirname(os.path.abspath(__file__)) + "/shot.js", out, str(n)], check=True)
+        sys.exit(0)
     with sync_playwright() as p:
         b = p.chromium.launch(); pg = b.new_page(viewport={"width": 1080, "height": 1350}, device_scale_factor=1)
         for i, s in enumerate(sl, 1):
