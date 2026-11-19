@@ -43,19 +43,26 @@ rodava em outra conta do Claude e agora passa a rodar aqui. Tudo o que você pre
 
 ## Etapa 2: token do Instagram (★)
 - Os scripts leem `IG_ACCESS_TOKEN` do ambiente. As variáveis `IG_USER_ID` e `IG_API_HOST` são opcionais.
-- É um token da **API do Instagram com login do Instagram** (`graph.instagram.com`) da conta @omapamentoria.
+- É um token de **usuário do sistema** da Meta. Os dados dele:
+  - usuário do sistema: "mapa-publicador";
+  - app: "O MAPA POSTER" (id 2706953796388646);
+  - página: MAPA Mentoria, ligada à @omapamentoria.
+- Usa `graph.facebook.com`. O `publicar.py` descobre o host sozinho.
+- **Não vence.** Pode ser o mesmo token que já estava em uso na conta antiga.
 - O token vai como parâmetro na URL, então precisa ser **variável de ambiente** do container. Segredo de rede em
   cabeçalho não serve.
 - Me guie para:
-  1. pegar o token no painel de desenvolvedor da Meta: app do MAPA → casos de uso → API do Instagram → gerar
-     token da @omapamentoria;
+  1. achar o token. Se eu não tiver guardado, gerar outro no Meta Business Suite: Configurações do negócio →
+     Usuários → Usuários do sistema → mapa-publicador → Gerar token, com o app O MAPA POSTER e as permissões
+     instagram_basic, instagram_content_publish, instagram_manage_insights, instagram_manage_comments,
+     pages_show_list, pages_read_engagement e business_management;
   2. colar como `IG_ACCESS_TOKEN=...` nas variáveis de ambiente do ambiente desta sessão. Use
      `read_documentation` (environment.secrets) para me mostrar o caminho atual.
 - **Você nunca escreve, imprime, grava, comita nem repete o token.**
 - Se eu colar o token no chat, me avise para gerar outro e não use esse.
 - Depois de salvo, e se preciso numa sessão nova, confira só a existência: `test -n "$IG_ACCESS_TOKEN" && echo ok`.
 - Depois teste sem publicar: `python3 publicar.py --confere 18114557669130213`. A resposta deve ter `"ok": true`.
-- O token vence em uns 60 dias. Quando aparecer erro 190 ou OAuthException, me peça um novo.
+- Se aparecer erro 190 ou OAuthException, o token foi revogado: me peça um novo.
 
 ## Etapa 3: rede e ferramentas (só você; eu só aprovo os cartões)
 - **Rede**: só se algo for bloqueado, proponha liberar os hosts necessários:
