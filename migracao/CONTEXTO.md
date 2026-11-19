@@ -16,7 +16,7 @@ que estava em andamento na migração.
     ```
     Depois copie a mídia para `$S/wt/<pasta>/`, faça commit e `git push origin instagram-midia`.
     Antes de agendar, confira que o link raw responde 200.
-- Calendário de Posts (fila): artifact recriado nesta conta, coleção `posts`. Antigo:
+- Calendário de Posts (fila): https://claude.ai/artifact/32aVhi2usJ6EUvW8FrFC2r, coleção `posts` (recriado em 19/11 na conta da empresa). Antigo, só leitura:
   `https://claude.ai/artifact/PfeNXpXEZcuZBFDyCdx3jw`.
 - Roteiro + calendário editorial (vídeos 001–070, de 12/11 a 31/01): https://claude.ai/artifact/LzEcaehDNmrc23ouJWbXRK
 - Planilha (Claude Sheets; ler pelo conector Claude Docs, `guide` → topic.sheets): https://claude.ai/artifact/UVmZJgpB4Vhpk6r4B5dUBe

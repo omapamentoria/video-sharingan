@@ -27,6 +27,6 @@
  {
   "nome": "MAPA – verificação (12h31/15h31/19h31/21h31)",
   "cron": "CRON_TZ=America/Sao_Paulo 31 12,15,19,21 * * *",
-  "prompt": "Rodada de VERIFICAÇÃO do RUNBOOK.md (git pull da branch mapa-posts antes): exporte os posts de hoje e dos últimos 3 dias do Calendário de Posts MAPA, rode `python3 verificar.py verifica.json` e trate cada item. Nunca publique o mesmo post duas vezes. Se não houver nada, responda só \"tudo publicado\"."
+  "prompt": "Rodada de VERIFICAÇÃO do RUNBOOK.md (git pull da branch mapa-posts antes): exporte os posts de hoje e dos últimos 3 dias do Calendário de Posts MAPA (https://claude.ai/artifact/32aVhi2usJ6EUvW8FrFC2r), rode `python3 verificar.py verifica.json` e trate cada item. Nunca publique o mesmo post duas vezes. Se não houver nada, responda só \"tudo publicado\"."
  }
 ]

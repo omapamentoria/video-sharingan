@@ -1,6 +1,6 @@
 # Publicador automático do Instagram do MAPA
 
-Fila única: **Calendário de Posts MAPA** — artifact `https://claude.ai/artifact/PfeNXpXEZcuZBFDyCdx3jw`,
+Fila única: **Calendário de Posts MAPA** — artifact `https://claude.ai/artifact/32aVhi2usJ6EUvW8FrFC2r`,
 banco do artifact, coleção `posts` (ler/escrever com a ferramenta ArtifactData).
 Campos de cada post: `tipo` ("reel" | "carrossel"), `titulo`, `legenda`, `midia` (URLs públicas, na ordem),
 `quando` (ISO com -03:00), `status` ("agendado" | "publicado" | "erro" | "perdido" | "rascunho"), `tentativas`, `origem`.
