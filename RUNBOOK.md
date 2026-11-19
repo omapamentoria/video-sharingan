@@ -27,6 +27,9 @@ deste repositório, servida em `https://raw.githubusercontent.com/omapamentoria/
   carrossel com dado do MAPA (resultados, prints, números de lote, vagas, preço) só com material real do dono —
   se faltar, peça e não publique.
 
+## Avisos do dono
+- 19/11: o 1º lote já foi lançado pelo time como **lote Black Friday** (post próprio, ~17/11). Não postar "lançamento" do lote de novo; em legenda/arte, chamar de lote Black Friday. Preço, vagas e prazo só com dado real do dono.
+
 ## Rodada de DESEMPENHO (toda segunda no agendamento das 7h, e sempre que o dono pedir)
 Objetivo: medir o que trouxe **seguidores, comentários, compartilhamentos, salvamentos e curtidas** e usar isso no
 planejamento. O foco é conteúdo de alto engajamento.

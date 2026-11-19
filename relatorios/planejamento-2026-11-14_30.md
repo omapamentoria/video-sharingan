@@ -2,6 +2,8 @@
 
 Grade do dono: 12h notícia · 15h Reel da agência · 19h conteúdo do roteiro (prioridade; 2º post do roteiro vai às 15h).
 
+> Atualização 19/11: o 1º lote já foi lançado pelo time como **lote Black Friday** (post próprio, ~17/11). O 008 sai do plano; 014 e 017 seguem, falando do lote Black Friday.
+
 ## O que os números mandam fazer
 1. **Gente real > arte pronta.** Aulão em escola (nota 501), bastidores/comunidade (468) e motivacional (247) rendem
    3–7× mais que carrossel da agência (26) e notícia (22). Os vídeos do roteiro com Matheus e Nando são a prioridade.
@@ -24,7 +26,7 @@ Grade do dono: 12h notícia · 15h Reel da agência · 19h conteúdo do roteiro 
 | seg 16 | Notícia: gabarito extraoficial / prazos Inep | Carrossel Extra: acertos no gabarito extraoficial (**prints reais do Nando**) | 005 Caixinha: fui mal em Matemática · rodada de desempenho |
 | ter 17 | Notícia (se forte) ou Reel | Reel da fila | 006 Bastidores do tema da redação |
 | qua 18 | Notícia (se forte) ou Reel | 070 Reagindo ao gabarito oficial (quando o Inep soltar) ou Reel | 007 Não foi como você queria? |
-| qui 19 | Notícia (se forte) ou Reel | Reel da fila | 008 LANÇAMENTO 1º lote |
+| qui 19 | Notícia (se forte) ou Reel | Reel da fila | ~~008 LANÇAMENTO 1º lote~~ (o time já lançou o lote Black Friday por conta própria em ~17/11) → carrossel do dia |
 | sex 20 | Notícia (se forte) ou Reel | Reel da fila | 009 Churrasco do time ⭐ bastidor |
 | sáb 21 | Notícia (se forte) ou Reel | Carrossel acertos dos alunos por área (**dados reais**) | 010 Tour pela plataforma |
 | **dom 22** | Notícia (se forte) ou Reel | Reel da fila | 011 Reagindo à nossa aprovação ⭐ |
