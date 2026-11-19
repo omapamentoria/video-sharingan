@@ -75,8 +75,7 @@ Relatórios em `relatorios/desempenho-*.md`; o plano está em `relatorios/planej
   - acertos por área (post de 21/11);
   - antes/depois do simulado (24/11);
   - preço, vagas e prazo do lote Black Friday (posts de 27/11 e 30/11).
-- `car-2026-11-25` ("Letícia: a primeira aluna do MAPA"): o dono cancelou um carrossel da Letícia em 13/11. Pergunte
-  antes de publicar.
+- `car-2026-11-25` ("Letícia: a primeira aluna do MAPA"): liberado pelo dono em 19/11, pode publicar.
 - Segunda 23/11: rodada de desempenho.
 - Os vídeos 001–070 do roteiro ainda não chegaram no Drive. Quando chegarem:
   - edite os Reels com ffmpeg;
